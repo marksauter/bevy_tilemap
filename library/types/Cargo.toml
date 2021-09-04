@@ -16,6 +16,5 @@ features = ["serialize"]
 serialize = ["serde"]
 
 [dependencies]
-bevy_math = "0.5"
-bevy_render = "0.5"
+bevy = { git = "https://github.com/bevyengine/bevy/", branch = "main" }
 serde = { version = "1.0", optional = true, features = ["derive"] }

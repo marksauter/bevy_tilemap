@@ -1,5 +1,5 @@
 use crate::lib::*;
-use ::bevy_ecs;
+use ::bevy::ecs;
 use ::std;
 
 /// A component that is used as a flag for dirty chunks that need updating.

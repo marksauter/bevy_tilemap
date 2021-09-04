@@ -186,48 +186,35 @@ impl Plugin for TilemapPlugin {
 /// A custom prelude around everything that we only need to use.
 #[no_implicit_prelude]
 mod lib {
-    extern crate bevy_app;
-    extern crate bevy_asset;
-    #[cfg(test)]
-    extern crate bevy_core;
-    extern crate bevy_ecs;
-    extern crate bevy_log;
-    extern crate bevy_math;
-    extern crate bevy_reflect;
-    extern crate bevy_render;
-    extern crate bevy_sprite;
-    extern crate bevy_tilemap_types;
-    extern crate bevy_transform;
-    extern crate bevy_utils;
-    extern crate bevy_window;
+    extern crate bevy;
     pub extern crate bitflags;
     #[cfg(feature = "serde")]
     extern crate serde;
     extern crate std;
 
     #[cfg(test)]
-    pub(crate) use bevy_app::ScheduleRunnerPlugin;
-    pub(crate) use bevy_app::{
+    pub(crate) use bevy::app::ScheduleRunnerPlugin;
+    pub(crate) use bevy::app::{
         AppBuilder, CoreStage, Events, Plugin, PluginGroup, PluginGroupBuilder,
     };
-    pub(crate) use bevy_asset::{AddAsset, Assets, Handle, HandleUntyped};
+    pub(crate) use bevy::asset::{AddAsset, Assets, Handle, HandleUntyped};
     #[cfg(test)]
-    pub(crate) use bevy_asset::{AssetPlugin, HandleId};
+    pub(crate) use bevy::asset::{AssetPlugin, HandleId};
     #[cfg(test)]
-    pub(crate) use bevy_core::CorePlugin;
+    pub(crate) use bevy::core::CorePlugin;
     #[cfg(test)]
-    pub(crate) use bevy_ecs::system::CommandQueue;
-    pub(crate) use bevy_ecs::{
+    pub(crate) use bevy::ecs::system::CommandQueue;
+    pub(crate) use bevy::ecs::{
         bundle::Bundle,
         entity::Entity,
         query::Changed,
         schedule::{ParallelSystemDescriptorCoercion, SystemLabel, SystemStage},
         system::{Commands, IntoSystem, Query, Res, ResMut},
     };
-    pub(crate) use bevy_log::{error, info, warn};
-    pub(crate) use bevy_math::{Vec2, Vec3};
-    pub(crate) use bevy_reflect::{TypeUuid, Uuid};
-    pub(crate) use bevy_render::{
+    pub(crate) use bevy::log::{error, info, warn};
+    pub(crate) use bevy::math::{Vec2, Vec3};
+    pub(crate) use bevy::reflect::{TypeUuid, Uuid};
+    pub(crate) use bevy::render::{
         camera::Camera,
         color::Color,
         draw::{Draw, Visible},
@@ -241,19 +228,19 @@ mod lib {
         shader::{Shader, ShaderStage, ShaderStages},
         texture::TextureFormat,
     };
-    pub(crate) use bevy_sprite::TextureAtlas;
+    pub(crate) use bevy::sprite::TextureAtlas;
     pub(crate) use bevy_tilemap_types::{
         dimension::{Dimension2, Dimension3, DimensionError},
         point::{Point2, Point3},
     };
     #[cfg(test)]
-    pub(crate) use bevy_transform::components::Children;
-    pub(crate) use bevy_transform::{
+    pub(crate) use bevy::transform::components::Children;
+    pub(crate) use bevy::transform::{
         components::{GlobalTransform, Parent, Transform},
         hierarchy::{BuildChildren, DespawnRecursiveExt},
     };
-    pub(crate) use bevy_utils::{HashMap, HashSet};
-    pub(crate) use bevy_window::WindowResized;
+    pub(crate) use bevy::utils::{HashMap, HashSet};
+    pub(crate) use bevy::window::WindowResized;
 
     pub(crate) use crate::bitflags::*;
 
@@ -280,7 +267,7 @@ mod lib {
 
     #[cfg(debug_assertions)]
     #[allow(unused_imports)]
-    pub(crate) use bevy_log::debug;
+    pub(crate) use bevy::log::debug;
 
     #[cfg(debug_assertions)]
     #[allow(unused_imports)]
