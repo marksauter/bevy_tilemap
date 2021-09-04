@@ -478,7 +478,7 @@ impl From<Dimension3> for Dimension2 {
 
 impl From<Extent3d> for Dimension3 {
     fn from(ext: Extent3d) -> Dimension3 {
-        Dimension3::new(ext.width, ext.height, ext.depth)
+        Dimension3::new(ext.width, ext.height, ext.depth_or_array_layers)
     }
 }
 

@@ -40,15 +40,14 @@ pub mod prelude;
 /// A custom prelude around all the types we need from `std`, `bevy`, and `serde`.
 #[no_implicit_prelude]
 mod lib {
-    extern crate bevy_math;
-    extern crate bevy_render;
+    extern crate bevy;
     #[cfg(feature = "serde")]
     extern crate serde;
     extern crate std;
 
     pub(crate) use self::{
-        bevy_math::{Vec2, Vec3},
-        bevy_render::texture::Extent3d,
+        bevy::math::{Vec2, Vec3},
+        bevy::render::texture::Extent3d,
     };
 
     #[cfg(feature = "serde")]
